@@ -1,0 +1,18 @@
+box: wercker/default
+build:
+  steps:
+    - script:
+        name: Download release
+        code: curl -O "http://download.geteventstore.com/binaries/eventstore-mono-2.0.0.tgz"
+    - script: 
+        name: Unpack
+        code: |-
+          mkdir ./eventstore-bin
+          tar xvfz something.tar.gz ./eventstore-bin
+    - script:
+        name: Install docker
+        code: curl get.docker.io | sudo sh -x
+    - script:
+        name: Build container
+        code: docker build -t="eventstore" .
+      
