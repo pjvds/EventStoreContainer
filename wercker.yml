@@ -8,7 +8,7 @@ build:
         name: Unpack
         code: |-
           mkdir ./eventstore-bin
-          tar xvfz something.tar.gz ./eventstore-bin
+          tar xvfz eventstore-mono-2.0.0.tgz ./eventstore-bin
     - script:
         name: Install docker
         code: curl get.docker.io | sudo sh -x
